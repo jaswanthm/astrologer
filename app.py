@@ -106,7 +106,7 @@ def makeResult(req):
         if item["name"] == "context_name":
             resultName = item["parameters"].get("any")
 
-    luckyNumber = "Your lucky number is " + str(numero(resultName))
+    luckyNumber = numero(resultName)
 
     return {
         "speech": luckyNumber,
@@ -115,6 +115,28 @@ def makeResult(req):
         # "contextOut": [],
         "source": "apiai-jash"
     }
+
+def getNumeroText(finalcount):
+    if finalcount == 1:
+        return "Your lucky number is " + str(finalcount) + " " + " and you are individualistic and independent, showing leadership and drive. The 1 is masculine, focused, an originator and self-starter; it is also progressive, strong-willed, courageous, self-reliant and rebellious (in a constructive way)."
+    elif finalcount == 2:
+        return "Your lucky number is " + str(finalcount) + " " + " and you are sensitive, tactful, diplomatic and cooperative. The 2s tend to be peacemakers and are loving, studious and patient. A 2 may express many musical or feminine qualities and also tends to be sensual and intuitive."
+    elif finalcount == 3:
+        return "Your lucky number is " + str(finalcount) + " " + " and you are imaginative, expressive communicators and artists. They are tolerant, joyful, optimistic, inspiring, talented, jovial, youthful, dynamic ... the list goes on and on!"
+    elif finalcount == 4:
+        return "Your lucky number is " + str(finalcount) + " " + " and you are disciplined, strong, stable, pragmatic, down-to-earth, reliable, dependable, hard-working, extracting, precise, methodical, conscientious, frugal, devoted, patriotic and trustworthy!"
+    elif finalcount == 5:
+        return "Your lucky number is " + str(finalcount) + " " + " and you are energetic, adventurous, daring and freedom-loving. They also tend to be versatile, flexible, adaptable, curious, social, sensual, quick-thinking, witty, courageous and worldly."
+    elif finalcount == 6:
+        return "Your lucky number is " + str(finalcount) + " " + " and you are responsible, loving, self-sacrificing, protective, sympathetic and compassionate. These loyal, maternal figures are domestic, fair and idealistic healers or teachers."
+    elif finalcount == 7:
+        return "Your lucky number is " + str(finalcount) + " " + ".7 isn't just a lucky number. It's also spiritual, intelligent, analytical, focused, introspective, studious, intuitive, knowledgeable, contemplative, serious, persevering, refined, gracious and displays much inner wisdom."
+    elif finalcount == 8:
+        return "Your lucky number is " + str(finalcount) + " " + " and you are authoritative, business-minded leaders. They value control and tend to be powerful, but are also balanced, materially detached, successful and realistic. They end up in management positions, are efficient, capable, street-smart and good judges of character."
+    elif finalcount == 9:
+        return "Your lucky number is " + str(finalcount) + " " + " and you are helpful, compassionate, aristocratic, sophisticated, charitable, generous, humanitarian, romantic, cooperative, creative, self-sufficient, proud and self-sacrificing."
+    else:
+        return "Your lucky number is " + str(finalcount)
 
 
 def numero(myname):
@@ -183,8 +205,7 @@ def numero(myname):
 
     finalcount = int(finalcount)
 
-    return finalcount
-
+    return getNumeroText(finalcount)
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
