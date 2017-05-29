@@ -1,0 +1,7 @@
+{
+  "name": "Astrologer Webhook",
+  "description": "API.AI webhook for Astrologer",
+  "repository": "https://github.com/jaswanthm/astrologer",
+  "logo": "http://xvir.github.io/img/apiai.png",
+  "keywords": ["api.ai", "natural language"]
+}
