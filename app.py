@@ -203,6 +203,9 @@ def numero(myname):
         finalcount += (count%10)
         count/=10 
 
+    if(finalcount == 10):
+        finalcount = 1
+
     finalcount = int(finalcount)
 
     return getNumeroText(finalcount)
